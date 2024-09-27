@@ -1,0 +1,6 @@
+[submodule "msquic"]
+	path = msquic
+	url = https://github.com/microsoft/msquic.git
+[submodule "rocksdb"]
+	path = rocksdb
+	url = https://github.com/facebook/rocksdb.git
