@@ -1,7 +1,9 @@
 name: Build, Upload, and Release Assets
 
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - '*'
 
 permissions:
   contents: write # required for creating release and uploading assets
