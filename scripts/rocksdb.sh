@@ -21,6 +21,4 @@ make static_lib
 strip librocksdb.a
 cp librocksdb.a ${out_dir}
 
-ls -lh ${out_dir}
-
 echo "rocksdb built successfully"

@@ -28,6 +28,4 @@ cmake --build . || { echo "Build msquic library failed"; exit 1; }
 
 cp bin/Release/libmsquic.a ${out_dir}
 
-ls -lh ${out_dir}
-
 echo "msquic built successfully"
