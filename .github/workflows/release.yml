@@ -55,4 +55,4 @@ jobs:
         generate_release_notes: true
         files: |
           ubuntu-latest-build/ubuntu-latest-build.tar.gz
-          macos-15-build/macos-latest-build.tar.gz
+          macos-15-build/macos-15-build.tar.gz
