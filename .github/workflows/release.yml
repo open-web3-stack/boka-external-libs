@@ -29,7 +29,7 @@ jobs:
       if: runner.os == 'Linux'
       uses: awalsh128/cache-apt-pkgs-action@latest
       with:
-        packages: lttng-tools lttng-modules-dkms babeltrace2 liblttng-ust-dev python3-babeltrace cmake build-essential
+        packages: lttng-tools lttng-modules-dkms babeltrace2 liblttng-ust-dev python3-babeltrace
         version: 1.0
     - name: Build
       run: ./build.sh
