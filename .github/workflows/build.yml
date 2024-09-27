@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-upload:
+    name: Build and Upload
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-15]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+    - name: Build msquic
+      run: ./scripts/msquic.sh
+    - name: Build rocksdb
+      run: ./scripts/rocksdb.sh
+    - name: Compress build output
+      run: |
+        tar czf ${{ matrix.os }}-build.tar.gz build/
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.os }}-build
+        path: ${{ matrix.os }}-build.tar.gz
+        retention-days: 1
