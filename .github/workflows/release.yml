@@ -30,10 +30,7 @@ jobs:
       uses: awalsh128/cache-apt-pkgs-action@latest
       with:
         packages: lttng-tools lttng-modules-dkms babeltrace2 liblttng-ust-dev python3-babeltrace cmake build-essential
-    - name: Install deps (macOS)
-      if: runner.os == 'macOS'
-      run: |
-        brew install cmake
+        version: 1.0
     - name: Build
       run: ./build.sh
     - name: Compress build output
