@@ -27,8 +27,6 @@ jobs:
         submodules: recursive
     - name: Build msquic
       run: ./scripts/msquic.sh
-    - name: Build rocksdb
-      run: ./scripts/rocksdb.sh
     - name: Compress build output
       run: |
         ls -lhR build
