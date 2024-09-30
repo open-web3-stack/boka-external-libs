@@ -12,7 +12,6 @@ concurrency:
 jobs:
   build-and-upload:
     name: Build and Upload
-    needs: define-matrix
     strategy:
       matrix:
         os:  [linux, macos]
