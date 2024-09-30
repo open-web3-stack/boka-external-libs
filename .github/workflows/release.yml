@@ -35,7 +35,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.os }}-build
-        path: build.tar.gz
+        path: ${{ matrix.os }}-build.tar.gz
         retention-days: 1
 
   create-release:
@@ -52,5 +52,5 @@ jobs:
         make_latest: true
         generate_release_notes: true
         files: |
-          linux-build/build.tar.gz
-          macos-build/build.tar.gz
+          linux-build/linux-build.tar.gz
+          macos-build/macos-build.tar.gz
