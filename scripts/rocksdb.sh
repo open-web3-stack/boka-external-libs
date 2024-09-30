@@ -18,7 +18,7 @@ cd rocksdb || { echo "directory not found"; exit 1; }
 
 make static_lib
 
-strip librocksdb.a
+strip --strip-unneeded librocksdb.a
 cp librocksdb.a ${out_dir}
 
 echo "rocksdb built successfully"
