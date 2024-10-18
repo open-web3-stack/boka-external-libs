@@ -18,6 +18,12 @@ jobs:
     runs-on: ${{ fromJSON('{"linux":"ubuntu-latest","macos":"macos-14"}')[matrix.os] }}
 
     steps:
+    - name: update llvm
+      if: matrix.os == 'macos'
+      run: |
+        brew install llvm@18
+        brew link --overwrite llvm@18
+        echo "CC=$(brew --prefix llvm@18)/bin/clang" >> $GITHUB_ENV
     - name: Checkout Code
       uses: actions/checkout@v4
       with:
