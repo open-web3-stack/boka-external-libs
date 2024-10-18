@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os:  [linux, macos]
-    runs-on: ${{ fromJSON('{"linux":"ubuntu-latest","macos":"macos-15"}')[matrix.os] }}
+    runs-on: ${{ fromJSON('{"linux":"ubuntu-latest","macos":"macos-14"}')[matrix.os] }}
 
     steps:
     - name: Checkout Code
