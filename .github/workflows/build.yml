@@ -21,18 +21,18 @@ jobs:
     - name: update llvm
       if: matrix.os == 'macos'
       run: |
-        brew install llvm@19
-        brew link --overwrite llvm@19
-        echo "CC=$(brew --prefix llvm@19)/bin/clang" >> $GITHUB_ENV
-        echo "CXX=$(brew --prefix llvm@19)/bin/clang++" >> $GITHUB_ENV
-        echo "LDFLAGS=-L$(brew --prefix llvm@19)/lib" >> $GITHUB_ENV
-        echo "CPPFLAGS=-I$(brew --prefix llvm@19)/include" >> $GITHUB_ENV
-        echo "PATH=$(brew --prefix llvm@19)/bin:$PATH" >> $GITHUB_ENV
-        echo "LD_LIBRARY_PATH=$(brew --prefix llvm@19)/lib:$LD_LIBRARY_PATH" >> $GITHUB_ENV
-        echo "PKG_CONFIG_PATH=$(brew --prefix llvm@19)/lib/pkgconfig:$PKG_CONFIG_PATH" >> $GITHUB_ENV
-        echo "CMAKE_PREFIX_PATH=$(brew --prefix llvm@19):$CMAKE_PREFIX_PATH" >> $GITHUB_ENV
-        echo "LLVM_CONFIG_PATH=$(brew --prefix llvm@19)/bin/llvm-config" >> $GITHUB_ENV
-        echo "LLVM_BIN_PATH=$(brew --prefix llvm@19)/bin" >> $GITHUB_ENV
+        brew install llvm@17
+        brew link --overwrite llvm@17
+        echo "CC=$(brew --prefix llvm@17)/bin/clang" >> $GITHUB_ENV
+        echo "CXX=$(brew --prefix llvm@17)/bin/clang++" >> $GITHUB_ENV
+        echo "LDFLAGS=-L$(brew --prefix llvm@17)/lib" >> $GITHUB_ENV
+        echo "CPPFLAGS=-I$(brew --prefix llvm@17)/include" >> $GITHUB_ENV
+        echo "PATH=$(brew --prefix llvm@17)/bin:$PATH" >> $GITHUB_ENV
+        echo "LD_LIBRARY_PATH=$(brew --prefix llvm@17)/lib:$LD_LIBRARY_PATH" >> $GITHUB_ENV
+        echo "PKG_CONFIG_PATH=$(brew --prefix llvm@17)/lib/pkgconfig:$PKG_CONFIG_PATH" >> $GITHUB_ENV
+        echo "CMAKE_PREFIX_PATH=$(brew --prefix llvm@17):$CMAKE_PREFIX_PATH" >> $GITHUB_ENV
+        echo "LLVM_CONFIG_PATH=$(brew --prefix llvm@17)/bin/llvm-config" >> $GITHUB_ENV
+        echo "LLVM_BIN_PATH=$(brew --prefix llvm@17)/bin" >> $GITHUB_ENV
     - name: Checkout Code
       uses: actions/checkout@v4
       with:
