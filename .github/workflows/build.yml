@@ -24,6 +24,15 @@ jobs:
         brew install llvm@18
         brew link --overwrite llvm@18
         echo "CC=$(brew --prefix llvm@18)/bin/clang" >> $GITHUB_ENV
+        echo "CXX=$(brew --prefix llvm@18)/bin/clang++" >> $GITHUB_ENV
+        echo "LDFLAGS=-L$(brew --prefix llvm@18)/lib" >> $GITHUB_ENV
+        echo "CPPFLAGS=-I$(brew --prefix llvm@18)/include" >> $GITHUB_ENV
+        echo "PATH=$(brew --prefix llvm@18)/bin:$PATH" >> $GITHUB_ENV
+        echo "LD_LIBRARY_PATH=$(brew --prefix llvm@18)/lib:$LD_LIBRARY_PATH" >> $GITHUB_ENV
+        echo "PKG_CONFIG_PATH=$(brew --prefix llvm@18)/lib/pkgconfig:$PKG_CONFIG_PATH" >> $GITHUB_ENV
+        echo "CMAKE_PREFIX_PATH=$(brew --prefix llvm@18):$CMAKE_PREFIX_PATH" >> $GITHUB_ENV
+        echo "LLVM_CONFIG_PATH=$(brew --prefix llvm@18)/bin/llvm-config" >> $GITHUB_ENV
+        echo "LLVM_BIN_PATH=$(brew --prefix llvm@18)/bin" >> $GITHUB_ENV
     - name: Checkout Code
       uses: actions/checkout@v4
       with:
